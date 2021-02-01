@@ -1,0 +1,19 @@
+.navigation{
+  overflow: hidden;
+  transition: all .5s;
+  width:150px;
+  background:#fcf1f1;
+  height:100%;
+  &-actived{
+    width:300px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .navigation{
+    position: fixed;
+    width:0px;
+    &-actived{
+      width:100%;
+    }
+  }
+}

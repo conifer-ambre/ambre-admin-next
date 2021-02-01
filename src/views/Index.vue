@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ambre-header></ambre-header>
+    Index
   </div>
 </template>
 

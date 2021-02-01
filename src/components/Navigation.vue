@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <div class="cursor-pointer" @click="handleSwitch">Header</div>
+  <div :class="`navigation ${navigation&&'navigation-actived'}`">
+    <div class="cursor-pointer" @click="handleSwitch">Navigation</div>
   </div>
 </template>
 
@@ -8,8 +8,13 @@
 import { defineComponent, toRefs, reactive } from 'vue'
 
 export default defineComponent({
-  name: 'Header',
-  props: {},
+  name: 'Navigation',
+  props: {
+    navigation: {
+      type: Boolean,
+      require: true
+    }
+  },
   setup (props, context) {
     const data = reactive({
       handleSwitch () {
