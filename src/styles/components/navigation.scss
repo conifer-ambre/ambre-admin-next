@@ -1,11 +1,43 @@
 .navigation{
+  background: #ffffff;
   overflow: hidden;
   transition: all .5s;
   width:150px;
-  background:#fcf1f1;
   height:100%;
+  color:#6b6b6b;
+  &-block{
+    height:calc(100% - 150px);
+    overflow: auto;
+    padding:25px;
+    &::-webkit-scrollbar {
+      width:0;
+    }
+  }
+  &-item{
+    &:hover{
+      transition: all .5s;
+      color:#000000;
+      .navigation-iconfont{
+        color:#000000;
+      }
+    }
+  }
   &-actived{
     width:300px;
+  }
+  &-iconfont{
+    transition: all .5s;
+    color:#d3d3d3;
+  }
+  &-support{
+    height: 100px;
+    &-card{
+      margin:15px;
+      background: #f8f8f8;
+      height:calc(100% - 30px);
+      border-radius: 15px;
+      overflow: hidden;
+    }
   }
 }
 @media screen and (max-width: 1024px) {
