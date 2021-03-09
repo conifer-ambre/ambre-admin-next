@@ -1,13 +1,14 @@
 <template>
-  <div class="header">
-    <!-- <div class="cursor-pointer" @click="handleSwitch">Header</div> -->
-    <div class="flex-ju-al-start pb-20">
-      <div>Hi</div>
-      <div class="font-weight-bold text-24 pl-10">CONIFERCHINA</div>
+  <div class="header flex-ju-al-between">
+    <div>
+      <div class="flex-ju-al-start">
+        <div class="font-weight-bold">Dashboard</div>
+        <div class="text-12 pl-10">01 Jan. 2020</div>
+      </div>
     </div>
-    <div class="flex-ju-al-start">
-      <div class="font-weight-bold">Dashboard</div>
-      <div class="text-12 pl-10">2021-1-1 19:00</div>
+    <div class="flex-ju-al-end">
+      <div class="iconfont icon-menu text-24 cursor-pointer header-icon mr-10" @click="handleNavigation"></div>
+      <div class="iconfont icon-user text-24 cursor-pointer header-icon" @click="handleControl"></div>
     </div>
   </div>
 </template>
@@ -20,9 +21,12 @@ export default defineComponent({
   props: {},
   setup (props, context) {
     const data = reactive({
-      handleSwitch () {
+      handleNavigation () {
         console.log(props)
-        context.emit('switch')
+        context.emit('navigation')
+      },
+      handleControl () {
+        context.emit('control')
       }
     })
     return {
@@ -31,3 +35,4 @@ export default defineComponent({
   }
 })
 </script>
+ 

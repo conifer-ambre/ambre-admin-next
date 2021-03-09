@@ -1,5 +1,15 @@
 .header{
   height:100px;
   background: #F6F7FB;
-  padding:25px;
+  padding:0 25px;
+  &-icon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 50%;
+    width:36px;
+    height:36px;
+    border:5px solid #f0f0f0;
+  }
 }

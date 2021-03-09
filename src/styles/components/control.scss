@@ -1,0 +1,59 @@
+.control{
+  position: relative;
+  width:0;
+  height:100%;
+  overflow: hidden;
+  background: #ffffff;
+  transition: all .5s;
+  &-active{
+    width:360px;
+  }
+  &-avatar{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    overflow: hidden;
+    position: fixed;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img{
+      width:80px;
+      height:80px;
+      padding:8px;
+      border-radius: 50%;
+      background: #ffffff;
+    }
+    &::before {
+     content: '';
+     position: absolute;
+     z-index:-1;
+     left: -50%;
+     top: -50%;
+     width: 200%;
+     height: 200%;
+     background: conic-gradient(transparent, #f2fc9c,  #fcb96d 100%);
+     animation: rotate 4s linear infinite;
+    }
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  &-block{
+    padding-top:100px;
+  }
+   
+}
+@media screen and (max-width: 1024px) {
+  .control{
+    right:0;
+    position: fixed;
+    &-active{
+      width:100%;
+    }
+  }
+}

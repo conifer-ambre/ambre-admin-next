@@ -22,21 +22,33 @@
       }
     }
   }
-  &-actived{
+  &-active{
     width:300px;
   }
   &-iconfont{
     transition: all .5s;
     color:#d3d3d3;
   }
-  &-support{
-    height: 100px;
-    &-card{
-      margin:15px;
-      background: #f8f8f8;
-      height:calc(100% - 30px);
-      border-radius: 15px;
-      overflow: hidden;
+  &-child{
+    overflow: hidden;
+    transition: all .5s;
+    &-item{
+      position: relative;
+      color:#6b6b6b;
+      line-height:30px;
+      &:hover{
+        color:#000000;
+        &::before{
+          left:10px;
+          top:12.5px;
+          position: absolute;
+          width:5px;
+          height:5px;
+          border-radius: 50%;
+          background:#000000;
+          content:''
+        }
+      }
     }
   }
 }
@@ -44,7 +56,7 @@
   .navigation{
     position: fixed;
     width:0px;
-    &-actived{
+    &-active{
       width:100%;
     }
   }

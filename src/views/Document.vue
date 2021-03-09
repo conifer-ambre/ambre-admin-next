@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="document">
   </div>
 </template>
 
@@ -9,9 +9,6 @@ import { Options, Vue } from 'vue-class-component'
 @Options({
   components: {}
 })
-export default class Index extends Vue {
-  handleControl () {
-    this.$emit('control')
-  }
+export default class Document extends Vue {
 }
 </script>

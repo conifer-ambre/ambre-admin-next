@@ -1,5 +1,5 @@
 <template>
-  <div :class="`navigation ${navigation&&'navigation-actived'}`">
+  <div :class="`navigation ${navigation && 'navigation-active'}`">
     <!-- block -->
     <div class="navigation-block">
       <!-- logo -->
@@ -10,19 +10,39 @@
         </div>
       </div>
       <!-- switch -->
-      <div :class="`iconfont cursor-pointer text-24 mt-20 mb-20 ${navigation?'icon-menu':'icon-list'}`" @click="handleSwitch"></div>
+      <div
+        :class="
+          `iconfont cursor-pointer text-24 mt-20 mb-20 ${navigation ? 'icon-menu' : 'icon-list'}`
+        "
+        @click="handleNavigation"
+      ></div>
       <!-- navigation -->
-      <div class="navigation-item flex-ju-al-start pb-20 pt-20 cursor-pointer" v-for="(item,index) in list" :key="index">
-        <div :class="`iconfont ${item.icon} text-24 navigation-iconfont`"></div>
-        <div v-if="navigation" class="white-space-nowrap pl-10 font-weight-bold text-14">{{item.label}}</div>
-      </div>
-    </div>
-    <!-- support -->
-    <div class="navigation-support">
-      <div class="navigation-support-card flex-ju-al-start pl-20">
-        <div>
-          <div class="font-weight-bold text-14">SUPPORT</div>
-          <div v-show="navigation" class="text-12">coniferchina@gmail.com</div>
+      <div class="navigation-item" v-for="(item, index) in list" :key="index">
+        <div class="flex-ju-al-start pb-20 pt-20 cursor-pointer" @click="item.check = !item.check">
+          <div :class="`iconfont ${item.icon} text-24 navigation-iconfont`"></div>
+          <div
+            v-if="navigation"
+            class="white-space-nowrap pl-10 font-weight-bold text-14"
+            @click="handleRouter(item)"
+          >
+            {{ item.label }}
+          </div>
+          <div v-if="item.child && item.child.length" class="iconfont icon-more-vertical"></div>
+        </div>
+        <!-- child -->
+        <div
+          v-if="item.child"
+          class="navigation-child"
+          :style="`height:${item.check ? item.child.length * 30 : 0}px`"
+          @click="handleRouter(item)"
+        >
+          <div
+            v-for="(item, index) in item.child"
+            :key="index"
+            class="navigation-child-item pl-35 cursor-pointer text-14 white-space-nowrap"
+          >
+            {{ item.label }}
+          </div>
         </div>
       </div>
     </div>
@@ -31,6 +51,7 @@
 
 <script lang="ts">
 import { defineComponent, toRefs, reactive } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'Navigation',
@@ -40,7 +61,8 @@ export default defineComponent({
       require: true
     }
   },
-  setup (props, context) {
+  setup(props, context) {
+    const router = useRouter()
     const data = reactive({
       list: [
         {
@@ -49,24 +71,34 @@ export default defineComponent({
         },
         {
           label: 'Document',
+          route: 'Document',
           icon: 'icon-book'
         },
         {
-          label: 'Class library',
-          icon: 'icon-tag'
-        },
-        {
-          label: 'Component library',
-          icon: 'icon-grid'
+          label: 'library',
+          icon: 'icon-tag',
+          check: false,
+          child: [
+            {
+              label: 'Class library'
+            },
+            {
+              label: 'Component'
+            }
+          ]
         },
         {
           label: 'Setting',
           icon: 'icon-settings'
         }
       ],
-      handleSwitch () {
+      handleNavigation() {
         console.log(props)
-        context.emit('switch')
+        context.emit('navigation')
+      },
+
+      handleRouter(param) {
+        router.push({ name: param.route })
       }
     })
     return {

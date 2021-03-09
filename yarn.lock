@@ -1860,10 +1860,10 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-ambre-plugin@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/ambre-plugin/-/ambre-plugin-0.0.6.tgz#2ed65c3d30ecc88888fffcc2102ab63f1e479e2d"
-  integrity sha512-b1M93TD4Et2DSAN6gsG4+d7QBzqZu9EHivBCidx49WNDb+C3B4C8DM7id7wRqhoup/JJ4ctBnnsHq1hpVFFtCA==
+ambre-plugin@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/ambre-plugin/-/ambre-plugin-0.0.7.tgz#62321658b6f22ab56130e8a7879b6c8195cd7780"
+  integrity sha512-hd/8mEBsnQjDZ3UHzjbT6rdvvLZngn5NnR1fXHU2kbxJX+b3u9XILGQybLdo5qKH0YVw8Wa7VqXs93TimBCjxg==
 
 ansi-colors@3.2.3:
   version "3.2.3"
