@@ -1,5 +1,5 @@
 <template>
-  <div class="app flex-ju-between">
+  <div class="app flex-justify-between">
     <ambre-navigation :navigation="navigation" @navigation="handleNavigation"></ambre-navigation>
     <div class="flex-1">
       <ambre-header @navigation="handleNavigation" @control="handleControl"></ambre-header>

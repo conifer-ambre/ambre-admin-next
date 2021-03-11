@@ -6,7 +6,7 @@ import components from '@/components/index'
 import utils from '@/utils'
 import '@/styles/main.scss'
 import '@/assets/iconfont/iconfont.css'
-import 'ambre-plugin/dist/ambre-plugin.css'
+import 'ambre-plugin/dist/styles/ambre-plugin.css'
 const app = createApp(App)
 app.config.globalProperties.$utils = utils
 app.use(store)

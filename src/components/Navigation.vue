@@ -3,8 +3,8 @@
     <!-- block -->
     <div class="navigation-block">
       <!-- logo -->
-      <div class="flex-ju-al-start">
-        <div class="cursor-pointer text-14 font-weight-bold white-space-nowrap">
+      <div class="flex-justify-align-start">
+        <div class="cursor-pointer font-size-14 font-weight-bold white-space-nowrap">
           <span>CONIFERCHINA</span>
           <span v-show="navigation">.COM</span>
         </div>
@@ -12,17 +12,22 @@
       <!-- switch -->
       <div
         :class="
-          `iconfont cursor-pointer text-24 mt-20 mb-20 ${navigation ? 'icon-menu' : 'icon-list'}`
+          `iconfont cursor-pointer font-size-24 margin-top-20 margin-bottom-20 ${
+            navigation ? 'icon-menu' : 'icon-list'
+          }`
         "
         @click="handleNavigation"
       ></div>
       <!-- navigation -->
       <div class="navigation-item" v-for="(item, index) in list" :key="index">
-        <div class="flex-ju-al-start pb-20 pt-20 cursor-pointer" @click="item.check = !item.check">
-          <div :class="`iconfont ${item.icon} text-24 navigation-iconfont`"></div>
+        <div
+          class="flex-justify-align-start padding-bottom-20 padding-top-20 cursor-pointer"
+          @click="item.check = !item.check"
+        >
+          <div :class="`iconfont ${item.icon} font-size-24 navigation-iconfont`"></div>
           <div
             v-if="navigation"
-            class="white-space-nowrap pl-10 font-weight-bold text-14"
+            class="white-space-nowrap padding-left-10 font-weight-bold font-size-14"
             @click="handleRouter(item)"
           >
             {{ item.label }}
@@ -39,7 +44,7 @@
           <div
             v-for="(item, index) in item.child"
             :key="index"
-            class="navigation-child-item pl-35 cursor-pointer text-14 white-space-nowrap"
+            class="navigation-child-item padding-left-35 cursor-pointer font-size-14 white-space-nowrap"
           >
             {{ item.label }}
           </div>

@@ -1,14 +1,20 @@
 <template>
-  <div class="header flex-ju-al-between">
+  <div class="header flex-justify-align-between">
     <div>
-      <div class="flex-ju-al-start">
+      <div class="flex-justify-align-start">
         <div class="font-weight-bold">Dashboard</div>
-        <div class="text-12 pl-10">01 Jan. 2020</div>
+        <div class="font-size-12 padding-left-10">01 Jan. 2020</div>
       </div>
     </div>
-    <div class="flex-ju-al-end">
-      <div class="iconfont icon-menu text-24 cursor-pointer header-icon mr-10" @click="handleNavigation"></div>
-      <div class="iconfont icon-user text-24 cursor-pointer header-icon" @click="handleControl"></div>
+    <div class="flex-justify-align-end">
+      <div
+        class="iconfont icon-menu font-size-24 cursor-pointer header-icon mr-10"
+        @click="handleNavigation"
+      ></div>
+      <div
+        class="iconfont icon-user font-size-24 cursor-pointer header-icon"
+        @click="handleControl"
+      ></div>
     </div>
   </div>
 </template>
@@ -19,13 +25,13 @@ import { defineComponent, toRefs, reactive } from 'vue'
 export default defineComponent({
   name: 'Header',
   props: {},
-  setup (props, context) {
+  setup(props, context) {
     const data = reactive({
-      handleNavigation () {
+      handleNavigation() {
         console.log(props)
         context.emit('navigation')
       },
-      handleControl () {
+      handleControl() {
         context.emit('control')
       }
     })
@@ -35,4 +41,3 @@ export default defineComponent({
   }
 })
 </script>
- 

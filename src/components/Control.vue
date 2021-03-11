@@ -1,17 +1,17 @@
 <template>
   <div :class="`control ${control&&'control-active'}`">
-    <div class="pt-25 pb-25 pl-25 pr-25">
+    <div class="padding-top-25 padding-bottom-25 padding-left-25 padding-right-25">
       <!-- avatar -->
-      <div class="flex-ju-center">
+      <div class="flex-justify-center">
         <div v-show="control" class="control-avatar cursor-pointer" @click="handleControl">
           <img src="@/assets/image/avatar.png" alt="">
         </div>
       </div>
       <div class="control-block">
         <!-- info -->
-        <div class="text-center">
-          <div class="pt-20 font-weight-bold">CONIFERCHINA.COM</div>
-          <div class="text-14 color-7f7f7f pt-10">WEB Engineer</div>
+        <div class="text-align-center">
+          <div class="padding-top-20 font-weight-bold">CONIFERCHINA.COM</div>
+          <div class="font-size-14 color-7f7f7f padding-top-10">WEB Engineer</div>
         </div>
       </div>
     </div>
